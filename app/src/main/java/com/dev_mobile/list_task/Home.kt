@@ -1,5 +1,6 @@
 package com.dev_mobile.list_task
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,6 +18,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.formatWithSkeleton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -74,8 +76,14 @@ fun Home(
                     verticalArrangement = Arrangement.SpaceBetween
                 ) {
 
-                    //TODO - CHAMA TASK-CARD
-//                    TaskCard(title = , describe = )
+                    Column(
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        //TODO - CHAMA TASK-CARD
+//                        for () {
+                            TaskCard("teste", "Sei la")
+//                        }
+                    }
 
                     Row(
                         modifier = Modifier

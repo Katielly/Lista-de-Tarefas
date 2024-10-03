@@ -82,15 +82,19 @@ fun CreateTask(
         currentTime.get(Calendar.DAY_OF_MONTH)
     )
 
-    Scaffold(topBar = {
-        TopAppBar(title = {
-            Text(
-                text = "Add Nova Tarefa",
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = "Add Nova Tarefa",
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
             )
-        })
-    }) {
+        }
+    ) {
         Column(
             modifier = Modifier
                 .padding(it)
@@ -99,7 +103,10 @@ fun CreateTask(
         ) {
 
             Column(
-                modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Top
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.Top
             ) {
 
                 TextField(
@@ -166,9 +173,10 @@ fun CreateTask(
                 verticalAlignment = Alignment.Bottom
             ) {
                 Button(
-                    onClick = { backScreen() }, colors = ButtonDefaults.buttonColors(
-                        Color.Blue
-                    ), shape = ShapeDefaults.ExtraSmall
+                    onClick = { backScreen() },
+                    colors = ButtonDefaults.buttonColors(
+                        Color.Blue),
+                    shape = ShapeDefaults.ExtraSmall
                 ) {
                     Text("Salvar")
                 }
