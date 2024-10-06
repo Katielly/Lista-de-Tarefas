@@ -49,7 +49,9 @@ fun TaskCard(
                 .fillMaxSize()
         ) {
             Column(
-                modifier = Modifier.fillMaxHeight().background(Color.Blue),
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .background(Color.Blue),
                 verticalArrangement = Arrangement.Center
             ) {
                 Checkbox(
@@ -79,6 +81,9 @@ fun TaskCard(
                     )
                 }
                 Text(
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(5.dp),
                     text = describe,
                     fontWeight = FontWeight.Light,
                     fontSize = 14.sp,
