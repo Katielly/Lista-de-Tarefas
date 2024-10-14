@@ -1,6 +1,5 @@
-package com.dev_mobile.list_task
+package com.dev_mobile.list_task.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,21 +17,27 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.formatWithSkeleton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.dev_mobile.list_task.ui.theme.ListtaskTheme
+import com.dev_mobile.list_task.viewmodel.HomeViewModel
+import androidx.compose.runtime.remember
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Home(
+    viewModel: HomeViewModel = viewModel(),
     openCreateTask: () -> Unit
 ) {
+
+    var listTasks = viewModel.loadTask()
 
     ListtaskTheme {
         Scaffold(
@@ -80,9 +85,9 @@ fun Home(
                         modifier = Modifier.weight(1f)
                     ) {
                         //TODO - CHAMA TASK-CARD
-//                        for () {
-                            TaskCard("teste", "Sei la")
-//                        }
+                        for (task in viewModel.loadTask()) {
+                            TaskCard(task.title, task.description)
+                        }
                     }
 
                     Row(
@@ -102,8 +107,6 @@ fun Home(
                     }
                 }
             }
-
-
         }
     }
 }
@@ -111,5 +114,5 @@ fun Home(
 @Preview
 @Composable
 fun PreviewHome() {
-    Home({})
+    Home(viewModel(), {})
 }

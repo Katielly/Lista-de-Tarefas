@@ -1,4 +1,4 @@
-package com.dev_mobile.list_task
+package com.dev_mobile.list_task.ui
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog

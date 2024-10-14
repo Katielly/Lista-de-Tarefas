@@ -1,4 +1,4 @@
-package com.dev_mobile.list_task
+package com.dev_mobile.list_task.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -100,7 +100,7 @@ fun TaskCardPreview() {
     ListtaskTheme {
         TaskCard(
             "Titulo",
-            "Mensagem mais aihsd dwunjnsa dwoedjkjsddwedw wedwedwe reregrte efergerftr rtgrtgt rtgrtgtgrt effer"
+            "Mensagem mais aihsd dwunjnsa dwoedjkjsddwedw wedwedwe reregrte efergerftr rtgrtgt rtgrtgtgrt effer akjdajdasj wedowedowiendeo"
         )
     }
 }
